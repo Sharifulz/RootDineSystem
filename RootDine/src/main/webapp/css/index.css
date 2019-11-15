@@ -1,0 +1,21 @@
+.hover{
+	position:relative;
+}
+
+.hover::before{
+	content:'';
+	position:absolute;
+	width:100%;
+	transform:scaleX(0);
+	height:2px;
+	bottom:0;
+	left:0;
+	background-color:#D820D0;
+	transform-origin:bottom left;
+	transition: transform 1s ease-out;
+	}
+	
+	.hover:hover::before{
+	transform:scaleX(1);
+	transform-origin:bottom left;
+}

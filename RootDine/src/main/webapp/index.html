@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Root Dine</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<link rel="shortcut icon" href="img/mmm.jpg" />
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+</head>
+<body ng-app="myApp" ng-controller="appController">
+	<div class="container">
+		<div class="col-md-12 col-sm-6">
+			<nav class="navbar navbar-expand-lg navbar-light"
+				style="background-color: purple;">
+				<div class="col-md-8">
+					<a class="navbar-brand text-light" href="#">Test me</a>
+				</div>
+				<div class="col-md-4">
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item active"><a class="nav-link text-light"
+								href="#">Home </a></li>
+							<li class="nav-item active"><a class="nav-link text-light"
+								href="#">About </a></li>
+							<li class="nav-item active"><a class="nav-link text-light"
+								href="#">Contact </a></li>
+							<li class="nav-item dropdown"><a
+								class="nav-link dropdown-toggle text-light" href="#"
+								id="navbarDropdown" role="button" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"> Career </a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="#">Action</a> <a
+										class="dropdown-item" href="#">Another action</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#">Something else here</a>
+								</div></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<div class="container mt-2" ng-show="isVisibleMenu1">
+		<center>
+			<div class="row">
+				<div ng-repeat="cat in menu1 track by $index">
+					<div class="col-md-3 col-sm-6 mt-1">
+						<div class="card" style="width: 18rem;">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-md-4">
+										<img src="img/forkk.png" class="card-img-top" alt="image one">
+									</div>
+									<div class="col-md-8">
+										<h5 class="card-title hover">{{cat}}</h5>
+										<input type="submit" value="Submit" ng-click="ttb($index)"
+											class="btn text-light" style="background-color: purple;">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</center>
+	</div>
+
+	<!--  ------------------------------ -->
+	<div class="container mt-2" ng-show="isVisibleMenu2">
+		<center>
+			<div class="row">
+				<div ng-repeat="foo in foodList track by $index">
+					<div class="col-md-3 col-sm-6 mt-1">
+						<div class="card" style="width: 18rem;">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-md-4">
+										<img src="img/forkk.png" class="card-img-top" alt="image one">
+									</div>
+									<div class="col-md-8">
+										<h5 class="card-title hover">{{foo}}</h5>
+										<input type="submit" value="Submit" ng-click="ttc($index)"
+											class="btn text-light" style="background-color: purple;">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</center>
+	</div>
+	<!--  ------------------------------ -->
+	<div class="container mt-2" ng-show="isVisibleMenu3">
+		<center>
+			<div class="row">
+				<div ng-repeat="subfood in subFoodList track by $index">
+					<div class="col-md-3 col-sm-6 mt-1">
+						<div class="card" style="width: 18rem;">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-md-2">
+										<img src="img/forkk.png" class="card-img-top" alt="image one">
+									</div>
+									<div class="col-md-8">
+										<span class="m-3"> <input id="{{$index}}"
+											ng-model="selectedList[$index]"
+											style="height: 20px; width: 20px;" type="checkbox"
+											class="form-check-input"></span> <span
+											class="card-title hover display-6">{{subfood}}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="col-md-3 col-sm-6 mt-1">
+						<div class="card" style="width: 18rem;">
+							<div>
+								<input type="submit" value="Submit" ng-click="submit()"
+									class="btn btn-block text-light p-3" style="background-color: purple;">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</center>
+	</div>
+	
+	
+	
+	<!--  ------------------------------ -->
+	<div class="container mt-2" ng-show="isVisibleMenu4">
+		<center>
+			<div class="row">
+				<div>
+					<h1>{{order_list.catagory_name}}</h1>
+					<h1>{{order_list.food_name}}</h1>
+					<h1>{{order_list.food_price}}</h1>
+					<div ng-repeat="sub in order_list.sub_menu_details">
+						<h2>{{sub.item_name}}</h2>
+						<h2>{{sub.item_price}}</h2>
+					</div>
+				</div>
+			</div>
+		</center>
+	</div>
+</body>
+</html>
+
+<!-- $scope.order_list = {
+						"catagory_name" : "",
+						"food_name" : "",
+						"food_price" : 0,
+						"sub_menu_details" : []
+					}; -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
