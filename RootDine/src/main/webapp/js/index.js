@@ -54,7 +54,6 @@ app
 					}
 
 					$scope.selectedList = {};
-
 					$scope.order_list = {
 						"catagory_name" : "",
 						"food_name" : "",

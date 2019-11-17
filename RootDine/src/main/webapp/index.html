@@ -139,7 +139,8 @@
 						<div class="card" style="width: 18rem;">
 							<div>
 								<input type="submit" value="Submit" ng-click="submit()"
-									class="btn btn-block text-light p-3" style="background-color: purple;">
+									class="btn btn-block text-light p-3"
+									style="background-color: purple;">
 							</div>
 						</div>
 					</div>
@@ -147,11 +148,11 @@
 			</div>
 		</center>
 	</div>
-	
-	
-	
+
+
+
 	<!--  ------------------------------ -->
-	<div class="container mt-2" ng-show="isVisibleMenu4">
+	<!-- 	<div class="container mt-2" ng-show="isVisibleMenu4">
 		<center>
 			<div class="row">
 				<div>
@@ -165,16 +166,67 @@
 				</div>
 			</div>
 		</center>
+	</div> -->
+
+	<div class="container mt-2" ng-show="isVisibleMenu4">
+		<div class="row">
+			<div class="col-md-6">
+				<h1 class="display-4 text-center">Order</h1>
+				<table class="table table-borderless">
+					<thead>
+						<tr>
+							<th scope="col">Menu</th>
+							<th scope="col">Price</th>
+							<th scope="col">Quantity</th>
+							<th scope="col">Total</th>
+							<th scope="col">121212</th>
+						</tr>
+						<hr/>
+					</thead>
+					<tbody>
+						<tr>
+							<td>{{order_list.food_name}}</td>
+							<td>{{order_list.food_price}}</td>
+							<td><input type="number" ng-model="food_qty"></td>
+							<td><span ng-model="total">{{order_list.food_price*food_qty}}</span></td>
+							<td><h1>{{order_list.food_price*food_qty}}</h1></td>
+									
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-6">
+			<h1  class="display-4 text-center">{{order_list.catagory_name}}</h1>
+			<table class="table table-borderless">
+			<thead>
+				<tr>
+					<th scope="col">Menu</th>
+					<th scope="col">Price</th>
+					<th scope="col">Quantity</th>
+					<th scope="col">Total</th>
+				</tr>
+				<hr/>
+			</thead>
+			<tbody>
+				<tr ng-repeat="sub in order_list.sub_menu_details">
+					<td>{{sub.item_name}}</td>
+					<td>{{sub.item_price}}</td>
+					<td><input type="number" ng-model="sub_food_qty"></td>
+					<td ng-model="total2">{{sub.item_price*sub_food_qty}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<h1>hey {{total1}}</h1>
+		<h1>{{order_list.food_price*food_qty}}</h1>
+		<h1>{{sub.item_price*sub_food_qty}}</h1>
+			</div>
+		</div>
+
+		
 	</div>
 </body>
 </html>
 
-<!-- $scope.order_list = {
-						"catagory_name" : "",
-						"food_name" : "",
-						"food_price" : 0,
-						"sub_menu_details" : []
-					}; -->
 
 
 
